@@ -1,0 +1,56 @@
+﻿@{Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";}
+@model Article
+@section head{
+    <script type="text/javascript" src="~/Areas/Admin/js/Edit.js"></script>
+}
+<div class="right" id="right">
+    <div class="rightTitle">
+        <h1>文章表<small>@(Model != null ? "编辑" : "新增")</small></h1>
+        <ol>
+            <li><a href="/Admin"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+            <li><span>&gt;</span><a href="@Url.Action("List")@Request.Url.Query">文章表</a></li>
+            <li><span>&gt;</span><small>@(Model != null ? "编辑" : "新增")</small></li>
+        </ol>
+    </div>
+    <div class="content">
+        <div class="box box-primary">
+            <form action="@Url.Action("Edit", new { TID = Request.QueryString["TID"] })" method="post">
+                <ul class="form-ul">
+                    <li>
+                        <label for="Title">标识符</label>
+                        @Html.DropDownListFor(m => m.TID, ViewBag.dropData as IEnumerable<SelectListItem>)
+                    </li>
+                    <li>
+                        <label for="Title">标题</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label>内容</label>
+                        @{ViewBag.kinName = "Content"; ViewBag.kinVal = Model != null ? Model.Content : ""; Html.RenderPartial("kindeditor");}
+                    </li>
+                    <li class="img" num="2">
+                        <label>图片</label>
+                        <input type="button" value="上传图片" class="btn btn-success" />
+                        @Html.HiddenFor(m => m.ImgUrl)
+                    </li>
+                    <li>
+                        <label for="downUrl">原链接地址</label>
+                        @Html.TextBoxFor(m => m.downUrl, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label for="ClickCount">点击次数</label>
+                        @Html.TextBoxFor(m => m.ClickCount, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label for="CreateDate">创建时间</label>
+                        <input type="text" class="input-text" id="CreateDate" name="CreateDate" value="@Base.Date(Model != null ? Model.CreateDate : DateTime.Now)" />
+                    </li>
+                </ul>
+                <div class="box-foot">
+                    <input type="submit" value="提交" class="btn btn-primary" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@Url.Action("List")@Request.Url.Query" class="btn btn-default">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

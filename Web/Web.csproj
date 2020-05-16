@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16FEAF49-A6FD-4BF8-AC84-6DDB650015EE}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DLL\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WindPager">
+      <HintPath>bin\DLL\WindPager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SharedController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SundryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TypesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OtherController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IndexModel.cs" />
+    <Compile Include="Models\_PartialRightModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Areas\Admin\css\Master.css" />
+    <Content Include="Areas\Admin\js\Edit.js" />
+    <Content Include="Areas\Admin\js\jquery-1.8.3.min.js" />
+    <Content Include="Areas\Admin\js\List.js" />
+    <Content Include="Areas\Admin\js\Master.js" />
+    <Content Include="Css\Layout.css" />
+    <Content Include="Css\Xq.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Img\fx.jpg" />
+    <Content Include="Img\logo.png" />
+    <Content Include="Img\search.jpg" />
+    <Content Include="Js\Index.js" />
+    <Content Include="Js\jquery.qrcode.min.js" />
+    <Content Include="Js\Layout.js" />
+    <Content Include="Sys\Css.css" />
+    <Content Include="Sys\Error.html" />
+    <Content Include="Sys\jquery-1.8.3.min.js" />
+    <Content Include="Sys\kindeditor\asp.net\bin\LitJSON.dll" />
+    <Content Include="Sys\kindeditor\asp.net\README.txt" />
+    <Content Include="Sys\kindeditor\kindeditor-min.js" />
+    <Content Include="Sys\kindeditor\lang\zh_CN.js" />
+    <Content Include="Sys\kindeditor\plugins\anchor\anchor.js" />
+    <Content Include="Sys\kindeditor\plugins\autoheight\autoheight.js" />
+    <Content Include="Sys\kindeditor\plugins\baidumap\baidumap.js" />
+    <Content Include="Sys\kindeditor\plugins\baidumap\index.html" />
+    <Content Include="Sys\kindeditor\plugins\baidumap\map.html" />
+    <Content Include="Sys\kindeditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="Sys\kindeditor\plugins\code\code.js" />
+    <Content Include="Sys\kindeditor\plugins\code\prettify.css" />
+    <Content Include="Sys\kindeditor\plugins\code\prettify.js" />
+    <Content Include="Sys\kindeditor\plugins\emoticons\emoticons.js" />
+    <Content Include="Sys\kindeditor\plugins\filemanager\filemanager.js" />
+    <Content Include="Sys\kindeditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="Sys\kindeditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="Sys\kindeditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="Sys\kindeditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="Sys\kindeditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="Sys\kindeditor\plugins\flash\flash.js" />
+    <Content Include="Sys\kindeditor\plugins\image\image.js" />
+    <Content Include="Sys\kindeditor\plugins\image\images\align_left.gif" />
+    <Content Include="Sys\kindeditor\plugins\image\images\align_right.gif" />
+    <Content Include="Sys\kindeditor\plugins\image\images\align_top.gif" />
+    <Content Include="Sys\kindeditor\plugins\image\images\refresh.png" />
+    <Content Include="Sys\kindeditor\plugins\insertfile\insertfile.js" />
+    <Content Include="Sys\kindeditor\plugins\lineheight\lineheight.js" />
+    <Content Include="Sys\kindeditor\plugins\link\link.js" />
+    <Content Include="Sys\kindeditor\plugins\map\map.html" />
+    <Content Include="Sys\kindeditor\plugins\map\map.js" />
+    <Content Include="Sys\kindeditor\plugins\media\media.js" />
+    <Content Include="Sys\kindeditor\plugins\multiimage\images\image.png" />
+    <Content Include="Sys\kindeditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="Sys\kindeditor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="Sys\kindeditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="Sys\kindeditor\plugins\multiimage\multiimage.js" />
+    <Content Include="Sys\kindeditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="Sys\kindeditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="Sys\kindeditor\plugins\preview\preview.js" />
+    <Content Include="Sys\kindeditor\plugins\quickformat\quickformat.js" />
+    <Content Include="Sys\kindeditor\plugins\table\table.js" />
+    <Content Include="Sys\kindeditor\plugins\template\html\1.html" />
+    <Content Include="Sys\kindeditor\plugins\template\html\2.html" />
+    <Content Include="Sys\kindeditor\plugins\template\html\3.html" />
+    <Content Include="Sys\kindeditor\plugins\template\template.js" />
+    <Content Include="Sys\kindeditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="Sys\kindeditor\themes\common\anchor.gif" />
+    <Content Include="Sys\kindeditor\themes\common\blank.gif" />
+    <Content Include="Sys\kindeditor\themes\common\flash.gif" />
+    <Content Include="Sys\kindeditor\themes\common\loading.gif" />
+    <Content Include="Sys\kindeditor\themes\common\media.gif" />
+    <Content Include="Sys\kindeditor\themes\common\rm.gif" />
+    <Content Include="Sys\kindeditor\themes\default\background.png" />
+    <Content Include="Sys\kindeditor\themes\default\default.css" />
+    <Content Include="Sys\kindeditor\themes\default\default.png" />
+    <Content Include="Sys\kindeditor\themes\qq\editor.gif" />
+    <Content Include="Sys\kindeditor\themes\qq\qq.css" />
+    <Content Include="Sys\kindeditor\themes\simple\simple.css" />
+    <Content Include="Sys\Login.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Sys\kindeditor\attached\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{e8f312ca-4433-467f-8ff2-48fb141d660c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindDAL\WindDAL.csproj">
+      <Project>{3340d566-8e83-4383-a328-1768e189d0ed}</Project>
+      <Name>WindDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindModel\WindModel.csproj">
+      <Project>{c90bf142-c213-4704-8c7d-468e552b8cea}</Project>
+      <Name>WindModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sys\Code.ashx" />
+    <Content Include="Sys\kindeditor\asp.net\file_manager_json.ashx" />
+    <Content Include="Sys\kindeditor\asp.net\upload_json.ashx" />
+    <Content Include="Sys\Login.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\css\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Test\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Test\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\kindeditor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Article\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Sundry\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sundry\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Types\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Types\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PartialFoot.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PartialRight.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Xq.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Other\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:22376/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

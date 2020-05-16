@@ -1,0 +1,110 @@
+﻿@model Article
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@(Model.Title)_易风网</title>
+    <meta name="keywords" content="@Model.Title" />
+    <meta name="description" content="@Base.SubStr(Base.NoHTML(Model.Content), 180, "")" />
+    <link rel="stylesheet" type="text/css" href="/Sys/Css.css" />
+    <script type="text/javascript" src="/Sys/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/Js/Layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Css/Xq.css" />
+    <script type="text/javascript" src="/Js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            WindScroll($('#srcLeft'));
+            //查询按钮单击事件
+            $('#btnSearch').click(function () {
+                var txt = $('#txtSearch').val();
+                if (txt.length > 0) {
+                    $(this).attr('href', '/list?title=' + txt);
+                }
+            });
+            //微信二维码生成
+            $('#fx_wx').hover(function () {
+                if ($("#code").children().length == 0) {
+                    $("#code").qrcode({
+                        render: "canvas", //table(非Html5) 或 canvas(html5)
+                        width: 110,
+                        height: 110,
+                        text: location.href
+                    });
+                } else {
+                    $("#code").css('display', 'block');
+                }
+            }, function () {
+                $("#code").css('display', 'none');
+            });
+            //栏目更多显示和隐藏
+            $('#NavMore').hover(function () { $(this).children('ol').css('display', 'block'); }, function () { $(this).children('ol').css('display', 'none'); });
+        })
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="width">
+            <div class="floR floLg">
+                <a href="/Other/Index#fankui">意见反馈</a>
+                <a href="/Other/Index#tousu" class="marL30">侵权投诉</a>
+                <a href="/Other/Index#lianxi" class="marL30 marR10">联系我们</a>
+            </div>
+            <ul class="nav floLg">
+                <li><a href="/">首页</a></li>
+                <li><a href="/travel">旅游</a></li>
+                <li><a href="/learning">教育</a></li>
+                <li><a href="/fashion">时尚</a></li>
+                <li><a href="/it">科技</a></li>
+                <li><a href="/business">财经</a></li>
+                <li><a href="/baobao">母婴</a></li>
+                <li><a href="/health">健康</a></li>
+                <li><a href="/history">历史</a></li>
+                <li><a href="/mil">军事</a></li>
+                <li><a href="/chihe">美食</a></li>
+                <li><a href="/cul">文化</a></li>
+                <li><a href="/astro">星座</a></li>
+                <li><a href="/society">社会</a></li>
+                <li id="NavMore" class="NavMore">
+                    <a href="javascript:void(0)">更多</a>
+                    <ol>
+                        <li><a href="/game">游戏</a></li>
+                        <li><a href="/fun">搞笑</a></li>
+                        <li><a href="/acg">动漫</a></li>
+                        <li><a href="/pets">宠物</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="head">
+        <div class="width">
+            <div class="search floLg floR"><input type="text" id="txtSearch" /><a href="javascript:void(0)" id="btnSearch"></a></div>
+            <a href="/"><img src="/Img/logo.png" /></a>
+        </div>
+    </div>
+    <div class="width floLg marT15">
+        <div class="width_l marT5" id="srcLeft">
+            <ul class="fx marB15g">
+                <li><a href="#SOHUCS" class="fx_pl">评论</a></li>
+                <li class="fx_hr"></li>
+                <li><a href="http://service.weibo.com/share/share.php?url=@Request.Url&amp;title=@Model.Title" target="_blank" class="fx_wb">微博</a></li>
+                <li><a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=@Request.Url&amp;title=@Model.Title" target="_blank" class="fx_qq">Qzone</a></li>
+                <li class="fx_wx"><a href="javascript:void(0)" id="fx_wx">微信</a><div id="code"></div></li>
+            </ul>
+        </div>
+        <div class="width_c marL30">
+            <h1 class="title">@Model.Title</h1>
+            <p class="date">@Base.Time(Model.CreateDate)</p>
+            <div class="article">@Html.Raw(Model.Content)</div>
+            <!--畅言的评论插件-->
+            <div id="SOHUCS"></div>
+            <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js"></script>
+            <script type="text/javascript">window.changyan.api.config({ appid: 'cysJMqlWW', conf: 'prod_2b0792b340f92ab299b228565d910453' });</script>
+        </div>
+        <div class="width_r marL30">@Html.Action("_PartialRight", "Home")</div>
+    </div>
+    <!--底部-->
+    @Html.Partial("_PartialFoot")
+</body>
+</html>

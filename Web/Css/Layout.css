@@ -1,0 +1,41 @@
+﻿a:hover{color:#406599;}
+.width {width:1170px;margin-left:auto;margin-right:auto;}
+.imgAuto{display:block;overflow:hidden;}
+.imgAuto img{min-width:100%;min-height:100%;position:relative;/*设置相对对位，js有用到*/}
+.top{height:34px;line-height:34px;background-color:#333;color:#fff;font-size:14px;}
+.top a:hover {color:#fff;}
+.width_l{width:110px;background-color:#fff;z-index:1;top:10px;/*top与js有关*/}
+.width_c{width:660px;}
+.width_r{width:340px;}
+.nav li a{line-height:40px;margin-bottom:1px;text-align:center;font-size:16px;display:block;border-radius:4px;}
+.nav li a:hover,.nav_che{background-color:#ED4040;color:#fff;}
+.NavMore{position:relative;}
+.NavMore ol {width: 110%;padding: 5px 5px;position: absolute;bottom: -5px;left: 110px;z-index:2;background-color: #fff;box-shadow: 0px 1px 4px #e0e0e0;display:none;}
+/*首页banner图样式开始*/
+.banner li span{width:100%;height:44px;line-height:44px;position:absolute;left:0px;bottom:0px;background-image: linear-gradient(-180deg,transparent 0,rgba(0,0,0,.8) 100%);font-size:20px;font-weight:bold;padding:0px 20px;color:#fff;}
+/*与js相结合的样式*/
+#WindFade, #WindFade ul li, #WindFade ul li a {width: 660px;height: 300px;}
+#WindFade {background-color:#000\9;background-image: linear-gradient(to bottom right,rgba(0,0,0,.3),#000);position: relative;}
+#WindFade ul li {position: absolute;left: 0px;top: 0px;z-index:-1;filter:alpha(opacity=0);opacity:0;} 
+#WindFade ol{position:absolute;left:45%;bottom:40px;z-index:2;}
+#WindFade ol li{width:15px;height:15px;margin-right:10px;background:#000;border-radius:20px;float:left;}
+#WindFade .cheBtn{background:red;}
+/*首页banner图样式结束*/
+.c_list li{border-bottom:1px solid #e8e8e8;padding-bottom:10px;margin-bottom:10px;}
+.c_list .imgAuto{width:155px;height:100px;border:1px solid #ccc;}
+.c_list_title{max-height:55px;font-size:20px;font-weight:bold;display:block;overflow:hidden;}
+.c_list_right{width:480px;padding-top:15px;}
+.page{width:280px;margin:30px auto;}
+.page a{width:120px;height:34px;line-height:34px;text-align:center;border:1px solid #ccc;display:block;background-color:#f5f5f5;font-size:16px;}
+.search{border:1px solid #cfcfcf;border-radius:100px;overflow:hidden;padding-left:15px;background-color:#f8f8f8;}
+.search input{width:280px;height:34px;background-color:transparent;border:none;outline:none;}
+.search a{width:30px;height:32px;background:url(/Img/search.jpg) no-repeat center center;}
+.r_box{border-top:2px solid #ED4040;background-color:#F4F5F6;padding:15px 20px 10px 20px;}
+.r_box .r_title{color: #222;font-size: 18px;font-weight: 700;}
+.r_list1 li{border-bottom:1px solid #E8E8E8;padding-bottom:10px;margin-bottom:10px;}
+.r_list1 li:last-child{border-bottom:0;margin-bottom:0px;}
+.r_list1 .imgAuto{width:60px;height:60px;}
+.r_list1_t{width:220px;height:50px;line-height:24px;overflow:hidden;padding-top:5px;font-size:14px;margin-left:20px;}
+.r_list2 {width:110%;}
+.r_list2 li{width:145px;height:135px;overflow:hidden;margin-right:15px;margin-bottom:15px;font-size:14px;}
+.r_list2 .imgAuto{width:100%;height:90px;margin-bottom:5px;}

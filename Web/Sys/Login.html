@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录</title>
+    <style type="text/css">
+        html,body,form,div,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6{margin: 0px;padding: 0px;}
+        *{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+        body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;background-color: #f5f5f5;}
+        label {width:20%;text-align:right;display: inline-block;margin-bottom: 5px;padding-right:10px;font-weight: bold;color: #666;}
+        .btn {line-height: 1.428571429;padding: 6px 12px;text-align: center;display: inline-block;vertical-align: middle;border:1px solid transparent;border-radius: 4px;user-select: none;color:#fff;background-color: #3c8dbc;border-color: #367fa9;}
+        .btn:hover,.btn:active {background-color: #367fa9;}
+        .input-text {width:68%;height: 34px;line-height: 1.428571429;padding: 6px 12px;font-size: 14px;color: #555;background-color: #fff;border: 1px solid #ddd;display:inline-block;}
+        .input-text:focus {outline:0;border-color: #66afe9;}
+        .img {width:70px;height:32px;display:inline-block;vertical-align:middle;border:1px solid #ccc;}
+        .contact {width:400px;margin:0px auto;position:relative;}
+        .t1 {width:140px;height:130px;margin-left:50%;border-left:6px solid #ccc;border-right:6px solid #ccc;}
+        .t2 {width:200px;padding:40px 15px;margin-left:42%;text-align:center;border:3px solid #d3d3d3;border-radius:6px;font-size:18px;font-weight:bold;background-color:#E5E5E5;}
+        .t3 {width:140px;height:30px;margin-left:50%;position:relative;z-index:10;top:-10px;border-left:6px solid #ccc;border-right:6px solid #ccc;}
+        .t4 {position:relative;top:-20px;padding:50px 0px 30px 0px;border:2px solid #ccc;border-radius:10px;background-color:#eee;box-shadow:0px 0px 30px #ccc;}
+        .t4 p {margin-bottom:15px;}
+        .t41 {padding-left:75px;}
+        .t41 input[type=checkbox] {vertical-align:middle;}
+        .t41 b{margin-bottom:0px;vertical-align:middle;color:#666;font-size:12px;cursor:pointer;}
+        .msg {color: red;margin-left: 20px;font-size: 14px;font-weight: bold;}
+        #Code {display:none;}
+    </style>
+    <script type="text/javascript">
+        /*读取Cookie*/
+        function getCookie(name) { var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)"); if (arr = document.cookie.match(reg)) { return unescape(arr[2]); } else { return null; } }
+        //写入cookie  day:保存的天数
+        function setCookie(name, value, day) { var exp = new Date(); exp.setTime(exp.getTime() + day * 24 * 60 * 60 * 1000); document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString(); }
+        function KeyUp(event) { if (event.keyCode == 13) { document.getElementById('btnSub').click(); } }  //按下回车登录
+        onload = function () {
+            //判断浏览器版本
+            if (navigator.userAgent.indexOf("MSIE 6.0") > 0 || navigator.userAgent.indexOf("MSIE 7.0") > 0) {alert("您的浏览器版本太低，为了达到最佳的预览效果和安全性建议使用谷歌浏览器");window.close();}
+            //获取Cookie中的用户名和密码并放入输入框
+            var UserName = getCookie("AdmUserName");
+            var UserPwd = getCookie("AdmUserPwd");
+            if (UserName != null && UserName.length > 0 && UserPwd != null && UserPwd.length > 0) {
+                document.getElementById('UserName').value = UserName;
+                document.getElementById('UserPwd').value = UserPwd;
+                document.getElementById('Che').checked = true;
+            }
+        }
+        function SetMsg(html) { document.getElementById('msg').innerHTML = html; }
+        //登陆单击事件
+        function Login() {
+            var UserName = document.getElementById('UserName').value;
+            var UserPwd = document.getElementById('UserPwd').value;
+            var txtCode = document.getElementById('txtCode').value;
+            if (UserName.length == 0) {
+                SetMsg('请输入用户名');
+                return;
+            } else if (UserPwd.length == 0) {
+                SetMsg('请输入密码');
+                return;
+            } else if (document.getElementById('Code').style.display == 'block' && txtCode.length == 0) {
+                SetMsg('请输入验证码');
+                return;
+            }
+            document.getElementById('btnSub').value = '登陆中...';
+            //Ajax请求
+            var XMLHttpReq;
+            try { XMLHttpReq = new ActiveXObject("Msxml2.XMLHTTP"); }
+            catch (E) {
+                try { XMLHttpReq = new ActiveXObject("Microsoft.XMLHTTP"); }
+                catch (E) { XMLHttpReq = new XMLHttpRequest(); }
+            }
+            //Ajax回调函数  // 1:登录成功，-1:登录失败 ,-2：登录失败且出现验证码，-3:验证码错误
+            XMLHttpReq.onreadystatechange = function () {
+                if (XMLHttpReq.readyState == 4 && XMLHttpReq.status == 200) {
+                    var mess = XMLHttpReq.responseText;
+                    if (mess == "1") {  //登陆成功
+                        if (document.getElementById('Che').checked) {
+                            setCookie("AdmUserName", UserName,30);
+                            setCookie("AdmUserPwd", UserPwd,30);
+                        } else {
+                            setCookie("AdmUserName", '',0);
+                            setCookie("AdmUserPwd", '',0);
+                        }
+                        location.href = '/Admin';
+                    } else if (mess == "-1"||mess == "-2") {  //登录失败
+                        SetMsg('用户名或密码错误');
+                    } else if (mess == "-3") {
+                        SetMsg('验证码错误');
+                    }
+                    if (mess == "-2" || mess == "-3") {
+                        document.getElementById('Code').style.display = 'block';
+                        document.getElementById('imgCode').click();
+                    }
+                    document.getElementById('btnSub').value = '登陆';
+                }
+            }
+            XMLHttpReq.open("POST", "/Sys/Login.ashx", true);
+            XMLHttpReq.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            XMLHttpReq.send("UserName=" + UserName + "&UserPwd=" + UserPwd + "&Code=" + txtCode);
+        }
+    </script>
+</head>
+<body onkeyup="KeyUp(event);">
+    <div class="contact">
+        <div class="t1"></div>
+        <div class="t2">后台管理员登录</div>
+        <div class="t3"></div>
+        <div class="t4">
+            <p>
+                <label>账号</label>
+                <input type="text" id="UserName" class="input-text" onfocus="SetMsg('')" />
+            </p>
+            <p>
+                <label>密码</label>
+                <input type="password" id="UserPwd" class="input-text" onfocus="SetMsg('')" />
+            </p>
+            <p id="Code">
+                <label>验证码</label>
+                <img src="Code.ashx" id="imgCode" title="看不清? 换一张" onclick="this.src='Code.ashx?id='+Math.random();" class="img" />
+                <input type="text" id="txtCode" class="input-text" style="width:120px;" />
+            </p>
+            <p class="t41">
+                <input type="checkbox" id="Che" />
+                <b onclick="document.getElementById('Che').click();">记住我</b>
+            </p>
+            <p style="padding-left:75px;">
+                <input type="button" value="登录" id="btnSub" class="btn" onclick="Login()" />
+                <span class="msg" id="msg"></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

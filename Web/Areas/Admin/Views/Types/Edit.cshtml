@@ -1,0 +1,35 @@
+﻿@{Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";}
+@model Types
+@section head{
+    <script type="text/javascript" src="~/Areas/Admin/js/Edit.js"></script>
+}
+<div class="right" id="right">
+    <div class="rightTitle">
+        <h1><small>@(Model != null ? "编辑" : "新增")</small></h1>
+        <ol>
+            <li><a href="/Admin"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+            <li><span>&gt;</span><a href="@Url.Action("List")@Request.Url.Query"></a></li>
+            <li><span>&gt;</span><small>@(Model != null ? "编辑" : "新增")</small></li>
+        </ol>
+    </div>
+    <div class="content">
+        <div class="box box-primary">
+            <form action="@Url.Action("Edit", new { TID = Request.QueryString["TID"] })" method="post">
+                <ul class="form-ul">
+                    <li>
+                        <label for="Title">标识符</label>
+                        @Html.TextBoxFor(m => m.TID, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label for="Title">名称</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "input-text" })
+                    </li>
+                </ul>
+                <div class="box-foot">
+                    <input type="submit" value="提交" class="btn btn-primary" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@Url.Action("List")@Request.Url.Query" class="btn btn-default">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

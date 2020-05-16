@@ -1,0 +1,88 @@
+﻿/*设计原则：提供设置间距，字体大小，行高，浮动，不提供布局方式（若要布局方式则用BootStrap）*/
+html,body,form,div,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6{margin: 0px;padding: 0px;}
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}  /*高度和宽度包括border-width和padding的值*/
+body
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #333;
+}
+ol,ul{list-style: none;}
+a{color:inherit;text-decoration: none;}
+img{border:0;}
+em,i{font-style:normal;}
+table{border-spacing: 0;border-collapse: collapse;}
+/*---------------------------------------------------------- 类样式 ----------------------------------------------------------*/
+.borR{border: 1px solid red;}
+.colFFF{color:#fff;}
+.dvm{display:inline-block;vertical-align:middle;}
+.textR{text-align:right;}
+.textC{text-align:center;}
+.hidEll,.hidEll>li{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.floL{float:left;}
+.floLg>*{float:left;}
+.floR{float:right;}
+.floRg>*{float:right;}
+.floRig i{float:right;}
+.floLg:after,.floRg:after,.clear{display:table;content:" ";clear:both;}  /* 清除浮动 */
+
+.linH22{line-height:22px;}
+.linH24{line-height:24px;}
+.linH26{line-height:26px;}
+.linH28{line-height:28px;}
+.linH30{line-height:30px;}
+.linH35{line-height:35px;}
+.linH40{line-height:40px;}
+
+.font12 {font-size:12px;}
+.font13 {font-size:13px;}
+.font14 {font-size:14px;}
+.font16 {font-size:16px;}
+.font18 {font-size:18px;}
+.font22 {font-size:22px;}
+
+.pad10{padding:5px 7px 7px 10px;}    /* 若行高为24px 则有6px被行高占据 */
+.pad15{padding:8px 10px 10px 15px;}
+.pad20{padding:13px 15px 15px 20px;}
+.padLR15g>*{padding-left:15px;padding-right:15px;}
+.padLR20g>*{padding-left:20px;padding-right:20px;}
+.padT10{padding-top:10px;}
+.padT15{padding-top:15px;}
+.padT20{padding-top:20px;}
+.padR10{padding-right:10px;}
+.padR15{padding-right:15px;}
+.padR20{padding-right:20px;}
+.padB10{padding-bottom:10px;}
+.padB15{padding-bottom:15px;}
+.padB20{padding-bottom:20px;}
+.padL10{padding-left:10px;}
+.padL15{padding-left:15px;}
+.padL20{padding-left:20px;}
+
+.marT5{margin-top:5px;}
+.marT10{margin-top:10px;}
+.marT15{margin-top:15px;}
+.marT20{margin-top:20px;}
+.marT30{margin-top:30px;}
+.marR10{margin-right:10px;}
+.marR15{margin-right:15px;}
+.marR20{margin-right:20px;}
+.marB10{margin-bottom:10px;}
+.marB15{margin-bottom:15px;}
+.marB20{margin-bottom:20px;}
+.marL5{margin-left:5px;}
+.marL10{margin-left:10px;}
+.marL15{margin-left:15px;}
+.marL20{margin-left:20px;}
+.marL30{margin-left:30px;}
+.marB5g>*{margin-bottom:5px;}
+.marB10g>*{margin-bottom:10px;}
+.marB15g>*{margin-bottom:15px;}
+.marB20g>*{margin-bottom:20px;}
+.marR5g>*{margin-right:5px;}
+.marR10g>*{margin-right:10px;}
+.marR15g>*{margin-right:15px;}
+.marR20g>*{margin-right:20px;}
+.marR30g>*{margin-right:30px;}

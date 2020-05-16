@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="@ViewBag.Key" />
+    <meta name="description" content="@ViewBag.Desc" />
+    <link rel="stylesheet" type="text/css" href="/Sys/Css.css" />
+    <script type="text/javascript" src="/Sys/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Css/Layout.css" />
+    <script type="text/javascript" src="/Js/Layout.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            WindScroll($('#srcLeft'));
+            //导航栏 设置为选中状态
+            $('#nav a').each(function () {
+                if (location.pathname.match(/\/\w*/) == $(this).attr('href')) {
+                    $(this).addClass('nav_che');
+                    return false;
+                }
+            });
+            //查询按钮单击事件
+            $('#btnSearch').click(function () {
+                var txt = $('#txtSearch').val();
+                if (txt.length > 0) {
+                    $(this).attr('href', '/list?title=' + txt);
+                }
+            });
+        });
+        $(function () {
+            //导航栏自动填充
+            var liList = $("#nav li");
+            var showCount = parseInt(($(window).height() - $("#nav").offset().top) / liList.first().outerHeight(true)) - 2;
+            var hideCount = liList.length - showCount;
+            var ol = $('<ol></ol>');
+            for (var i = 0; i < hideCount; i++) {
+                var obj = liList.eq(liList.length - i - 1);
+                obj.clone(true).appendTo(ol);
+                obj.remove();
+            }
+            if (ol.children().length > 0) {
+                var more = $('<li class="NavMore"><a href="javascript:void(0)">更多</a></li>');
+                more.append(ol);
+                $('#nav').append(more);
+                more.hover(function () { ol.css('display', 'block'); }, function () { ol.css('display', 'none'); });
+            }
+        });
+    </script>
+    @RenderSection("head")
+</head>
+<body>
+    <!--头部-->
+    <div class="top">
+        <div class="width">
+            <div class="floR floLg">
+                <a href="/Other/Index#fankui">意见反馈</a>
+                <a href="/Other/Index#tousu" class="marL30">侵权投诉</a>
+                <a href="/Other/Index#lianxi" class="marL30 marR10">联系我们</a>
+            </div>
+            北京时间：@Base.Time(DateTime.Now) @Base.Week(DateTime.Now)
+        </div>
+    </div>
+    <!--中间部分-->
+    <div class="width marT15">
+        <div class="width_l floL" id="srcLeft">
+            <a href="/"><img src="/Img/logo.png" style="width:100%" /></a>
+            <ul class="nav marT10" id="nav">
+                <li><a href="/">首页</a></li>
+                <li><a href="/travel">旅游</a></li>
+                <li><a href="/learning">教育</a></li>
+                <li><a href="/fashion">时尚</a></li>
+                <li><a href="/it">科技</a></li>
+                <li><a href="/business">财经</a></li>
+                <li><a href="/baobao">母婴</a></li>
+                <li><a href="/health">健康</a></li>
+                <li><a href="/history">历史</a></li>
+                <li><a href="/mil">军事</a></li>
+                <li><a href="/chihe">美食</a></li>
+                <li><a href="/cul">文化</a></li>
+                <li><a href="/astro">星座</a></li>
+                <li><a href="/society">社会</a></li>
+                <li><a href="/game">游戏</a></li>
+                <li><a href="/fun">搞笑</a></li>
+                <li><a href="/acg">动漫</a></li>
+                <li><a href="/pets">宠物</a></li>
+            </ul>
+        </div>
+        @RenderBody()
+        <div class="clear"></div>
+    </div>
+    <!--底部-->
+    @Html.Partial("_PartialFoot")
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@{Layout = "~/Views/Shared/_Layout.cshtml";}
+@model IndexModel
+@section head{
+    <script type="text/javascript" src="/Js/Index.js"></script>
+}
+<div class="width_c marL30 floL">
+    <div class="banner" id="WindFade">
+        <ul>
+            @foreach (Sundry m in Model.Banner)
+            {
+                <li><a href="@m.str3" target="_blank" class="imgAuto"><img src="@m.str2" /><span class="hidEll">@m.str1</span></a></li>
+            }
+        </ul>
+    </div>
+    <ul class="c_list marT10">
+        @foreach (Article m in Model.Article)
+        {
+        <li class="floLg">
+            @if (m.ImgUrl.Length>0)
+            {
+                <a href="/@m.ID" target="_blank" class="imgAuto"><img src="@m.ImgUrl" /></a>
+                <div class="marL20 c_list_right">
+                    <a href="/@m.ID" target="_blank" class="c_list_title">@m.Title</a>
+                    <p class="marT10 font13">@Base.Time(m.CreateDate)</p>
+                </div>
+            }
+            else
+            {
+                <div class="c_list_right" style="width:auto;">
+                    <a href="/@m.ID" target="_blank" class="c_list_title">@m.Title</a>
+                    <p class="marT10 font13">@Base.Time(m.CreateDate)</p>
+                </div>
+            }
+        </li>
+        }
+    </ul>
+    <div class="page">
+        <a href="/list/2">下一页</a>
+    </div>
+</div>
+<div class="width_r marL30 floL">
+    <div class="search floLg marB15"><input type="text" id="txtSearch" /><a href="javascript:void(0)" id="btnSearch"></a></div>
+    @Html.Action("_PartialRight", "Home")
+</div>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>出现错误</title>
+    <style type="text/css">
+        html,body,form,div,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6{margin: 0px;padding: 0px;}
+        *{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+        body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 14px;line-height: 1.42857143;color: #333;background-color: #f5f5f5;}
+        .contact {width:400px;margin:0px auto;position:relative;}
+        .t1 {width:140px;height:130px;margin-left:50%;border-left:6px solid #ccc;border-right:6px solid #ccc;}
+        .t2 {width:200px;padding:40px 15px;margin-left:42%;text-align:center;border:3px solid #d3d3d3;border-radius:6px;font-size:18px;font-weight:bold;background-color:#E5E5E5;}
+        .t3 {width:140px;height:30px;margin-left:50%;position:relative;z-index:10;top:-10px;border-left:6px solid #ccc;border-right:6px solid #ccc;}
+        .t4 {position:relative;top:-20px;padding:100px 30px 25px 30px;border:2px solid #ccc;text-align:center;border-radius:10px;background-color:#eee;box-shadow:0px 0px 30px #ccc;}
+        .t41 {margin-top: 60px;text-align: right;}
+    </style>
+    <script type="text/javascript">
+        //根据url参数名返回参数值
+        function QueryString(name) { var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); var r = window.location.search.substr(1).match(reg); if (r != null) return unescape(r[2]); return null; }
+        onload = function () {
+            var id = QueryString('id');
+            var title = document.getElementById('title');
+            var content = document.getElementById('content');
+            if (id == 500) {
+                content.innerHTML = '程序内部出现错误';
+            } else if (id == 404) {
+                content.innerHTML = '您访问的页面不存在，请确认输入的地址是否正确';
+            } else {
+                title.innerHTML = QueryString("title");
+                content.innerHTML = QueryString("content");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="contact">
+        <div class="t1"></div>
+        <div class="t2" id="title">出现错误了</div>
+        <div class="t3"></div>
+        <div class="t4">
+            <div id="content"></div>
+            <p class="t41"><a href="/Index">返回首页</a></p>
+        </div>
+    </div>
+</body>
+</html>

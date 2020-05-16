@@ -1,0 +1,61 @@
+﻿@{Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";}
+@model Test
+@section head{
+    <script type="text/javascript" src="~/Areas/Admin/js/Edit.js"></script>
+}
+<div class="right" id="right">
+    <div class="rightTitle">
+        <h1>新闻中心<small>@(Model != null ? "编辑" : "新增")</small></h1>
+        <ol>
+            <li><a href="/Admin"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+            <li><span>&gt;</span><a href="@Url.Action("List")@Request.Url.Query">新闻中心</a></li>
+            <li><span>&gt;</span><small>@(Model != null ? "编辑" : "新增")</small></li>
+        </ol>
+    </div>
+    <div class="content">
+        <div class="box box-primary">
+            <form action="@Url.Action("Edit", new { TID = Request.QueryString["TID"] })" method="post">
+                <ul class="form-ul">
+                    <li>
+                        <label for="Title">标题</label>
+                        @Html.TextBoxFor(m => m.Title, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label for="Dates">时间</label>
+                        <input type="text" class="input-text" id="Dates" name="Dates" value="@Base.Date(Model != null ? Model.Dates : DateTime.Now)" />
+                    </li>
+                    <li class="img" num="2">
+                        <label>图片</label>
+                        <input type="button" value="上传图片" class="btn btn-success" />
+                        @Html.HiddenFor(m => m.Img)
+                    </li>
+                    <li>
+                        <label for="Num">数量</label>
+                        @Html.TextBoxFor(m => m.Num, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label for="Price">价格</label>
+                        @Html.TextBoxFor(m => m.Price, new { @class = "input-text" })
+                    </li>
+                    <li>
+                        <label for="Che">是否选中</label>
+                        @Html.CheckBoxFor(m => m.Che)
+                    </li>
+                    <li>
+                        <label>内容</label>
+                        @{ViewBag.kinName = "Content"; ViewBag.kinVal = Model != null ? Model.Content : ""; Html.RenderPartial("kindeditor");}
+                    </li>
+                    <li class="file">
+                        <label>文件</label>
+                        <input type="button" value="上传图片" class="btn btn-success" />
+                        @Html.HiddenFor(m => m.Files)
+                    </li>
+                </ul>
+                <div class="box-foot">
+                    <input type="submit" value="提交" class="btn btn-primary" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@Url.Action("List")@Request.Url.Query" class="btn btn-default">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

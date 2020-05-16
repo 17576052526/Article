@@ -1,0 +1,54 @@
+D:\Desktop\Wind\WindDAL\bin\Debug\WindDAL.dll
+D:\Desktop\Wind\WindDAL\bin\Debug\WindDAL.pdb
+D:\Desktop\Wind\WindDAL\bin\Debug\Common.dll
+D:\Desktop\Wind\WindDAL\bin\Debug\WindModel.dll
+D:\Desktop\Wind\WindDAL\bin\Debug\Common.pdb
+D:\Desktop\Wind\WindDAL\bin\Debug\WindModel.pdb
+D:\Desktop\Wind\WindDAL\obj\Debug\WindDAL.csprojResolveAssemblyReference.cache
+D:\Desktop\Wind\WindDAL\obj\Debug\WindDAL.dll
+D:\Desktop\Wind\WindDAL\obj\Debug\WindDAL.pdb
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\bin\Debug\WindDAL.dll
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\bin\Debug\WindDAL.pdb
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\bin\Debug\Common.dll
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\bin\Debug\WindModel.dll
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\bin\Debug\Common.pdb
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\bin\Debug\WindModel.pdb
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\obj\Debug\WindDAL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\obj\Debug\WindDAL.dll
+C:\Users\Administrator\Desktop\Wind 6.1\WindDAL\obj\Debug\WindDAL.pdb
+D:\Desktop\Wind 6.1\WindDAL\bin\Debug\WindDAL.dll
+D:\Desktop\Wind 6.1\WindDAL\bin\Debug\WindDAL.pdb
+D:\Desktop\Wind 6.1\WindDAL\bin\Debug\Common.dll
+D:\Desktop\Wind 6.1\WindDAL\bin\Debug\WindModel.dll
+D:\Desktop\Wind 6.1\WindDAL\bin\Debug\Common.pdb
+D:\Desktop\Wind 6.1\WindDAL\bin\Debug\WindModel.pdb
+D:\Desktop\Wind 6.1\WindDAL\obj\Debug\WindDAL.csprojResolveAssemblyReference.cache
+D:\Desktop\Wind 6.1\WindDAL\obj\Debug\WindDAL.dll
+D:\Desktop\Wind 6.1\WindDAL\obj\Debug\WindDAL.pdb
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindDAL.dll
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindDAL.pdb
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\Common.dll
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindModel.dll
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\Common.pdb
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindModel.pdb
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\obj\Debug\WindDAL.csprojResolveAssemblyReference.cache
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\obj\Debug\WindDAL.dll
+D:\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\obj\Debug\WindDAL.pdb
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindDAL.dll
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindDAL.pdb
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\Common.dll
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindModel.dll
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\Common.pdb
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\bin\Debug\WindModel.pdb
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\obj\Debug\WindDAL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\obj\Debug\WindDAL.dll
+C:\Users\Administrator\Desktop\Wind备份 广州2016-7-6\Wind 6.1\WindDAL\obj\Debug\WindDAL.pdb
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\bin\Debug\WindDAL.dll
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\bin\Debug\WindDAL.pdb
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\bin\Debug\Common.dll
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\bin\Debug\WindModel.dll
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\bin\Debug\Common.pdb
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\bin\Debug\WindModel.pdb
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\obj\Debug\WindDAL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\obj\Debug\WindDAL.dll
+C:\Users\Administrator\Desktop\Article 2.0\Wind 6.1\WindDAL\obj\Debug\WindDAL.pdb

@@ -1,0 +1,88 @@
+﻿@{Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";}
+@section head{}
+<div class="right" id="right">
+    <div class="rightTitle">
+        <h1>新闻中心<small>列表页</small></h1>
+        <ol>
+            <li><a href="/Admin"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+            <li><span>&gt;</span><a href="List.html">新闻中心</a></li>
+            <li><span>&gt;</span><small>新增</small></li>
+        </ol>
+    </div>
+    <div class="content">
+        <!--其他地方都和Master.html是一样的，只需要修改 class="content"的这个div-->
+        <style type="text/css">
+            .table {min-width: initial;}
+            .table td {border: 0px;border-top: 1px solid #eee;}
+        </style>
+        <div class="row">
+            <div class="col">
+                <div class="box box-info">
+                    <h3 class="box-title">登录信息</h3>
+                    <table class="table">
+                        <tr>
+                            <td>上一次登录名</td>
+                            <td>7654561231.Q</td>
+                        </tr>
+                        <tr>
+                            <td>上一次登陆的时间</td>
+                            <td>2016-06-08</td>
+                        </tr>
+                        <tr>
+                            <td>上一次登陆的IP</td>
+                            <td>192.168.0.132</td>
+                        </tr>
+                        <tr>
+                            <td>上一次登陆的地区</td>
+                            <td>192.168.0.132</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <div class="box box-success">
+                    <h3 class="box-title">技术支持</h3>
+                    <table class="table">
+                        <tr>
+                            <td>QQ</td>
+                            <td>123456789</td>
+                        </tr>
+                        <tr>
+                            <td>联系人</td>
+                            <td>王先生</td>
+                        </tr>
+                        <tr>
+                            <td>手机</td>
+                            <td>1341989324</td>
+                        </tr>
+                        <tr>
+                            <td>邮箱</td>
+                            <td>3890@qq.com</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="box box-danger">
+            <h3 class="box-title">系统信息</h3>
+            <table class="table">
+                <tr>
+                    <td>数据库</td>
+                    <td>Sql Server</td>
+                </tr>
+                <tr>
+                    <td>编程语言</td>
+                    <td>Asp.Net 4.0</td>
+                </tr>
+                <tr>
+                    <td>服务器名称</td>
+                    <td>PC21200036</td>
+                </tr>
+                <tr>
+                    <td>IIS版本</td>
+                    <td>IIS 7.0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

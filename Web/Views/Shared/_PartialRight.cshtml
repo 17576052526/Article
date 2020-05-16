@@ -1,0 +1,25 @@
+﻿@model _PartialRightModel
+<div class="r_box">
+    <p class="r_title">热门推荐</p>
+    <ul class="r_list1 marT10">
+        @foreach (Article m in Model.ermen)
+        {
+            <li class="floLg">
+                <a href="/@m.ID" target="_blank" class="imgAuto"><img src="@m.ImgUrl" /></a>
+                <a href="/@m.ID" target="_blank" class="r_list1_t">@m.Title</a>
+            </li>
+        }
+    </ul>
+</div>
+<div class="r_box marT15">
+    <p class="r_title">每日精选</p>
+    <ul class="r_list2 floLg marT10">
+        @foreach (Article m in Model.jingxuan)
+        {
+    <li>
+        <a href="/@m.ID" target="_blank" class="imgAuto"><img src="@m.ImgUrl" /></a>
+        <a href="/@m.ID" target="_blank">@m.Title</a>
+    </li>
+        }
+    </ul>
+</div>

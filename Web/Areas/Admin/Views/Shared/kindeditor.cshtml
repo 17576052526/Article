@@ -1,0 +1,31 @@
+﻿<link rel="Stylesheet" type="text/css" href="/Sys/kindeditor/themes/default/default.css" />
+<link rel="Stylesheet" type="text/css" href="/Sys/kindeditor/plugins/code/prettify.css" />
+<script type="text/javascript" src="/Sys/kindeditor/kindeditor-min.js"></script>
+<script type="text/javascript" src="/Sys/kindeditor/lang/zh_CN.js"></script>
+<script type="text/javascript" src="/Sys/kindeditor/plugins/code/prettify.js"></script>
+<script type="text/javascript">
+    KindEditor.ready(function (K) {
+        var editor1 = K.create('#@ViewBag.kinName', {
+            cssPath: '/Sys/kindeditor/plugins/code/prettify.css',
+            uploadJson: '/Sys/kindeditor/asp.net/upload_json.ashx',
+            fileManagerJson: '/Sys/kindeditor/asp.net/file_manager_json.ashx',
+            allowFileManager: true,
+            filterMode: false,  /* 不过滤html标记 */
+            afterCreate: function () {
+                var self = this;
+                K.ctrl(document, 13, function () {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function () {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
+</script>
+<textarea id="@ViewBag.kinName" name="@ViewBag.kinName" style='width:100%;'>@ViewBag.kinVal</textarea>
+<script type="text/javascript">    document.getElementById('@ViewBag.kinName').style.height = '400px';</script>
+@{ViewBag.kinName = null; ViewBag.kinVal = null;}

@@ -1,0 +1,56 @@
+﻿@{Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";}
+@model ViewModel<Sundry>
+@section head{
+    <script type="text/javascript" src="~/Areas/Admin/js/List.js"></script>
+}
+<div class="right" id="right">
+    <div class="rightTitle">
+        <h1>杂项表<small>列表页</small></h1>
+        <ol>
+            <li><a href="/Admin"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+            <li><span>&gt;</span><small>杂项表</small></li>
+        </ol>
+    </div>
+    <div class="content">
+        <div class="box">
+            <a href="javascript:location.href=location.href;" class="btn btn-default"><i class="glyphicon glyphicon-refresh"></i></a>
+            <a url="@Url.Action("CheDel")@Request.Url.Query" onclick="return CheDel(this)" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+            <a href="@Url.Action("Edit", new { TID = Request.QueryString["TID"] })" class="btn btn-info"><i class="glyphicon glyphicon-plus"></i></a>
+            <div class="list">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="check"><input type="checkbox" /></th>
+                            <th>编号</th>
+                            <th>标题</th>
+							<th>图片</th>
+							<th>链接</th>
+                            <th>编辑</th>
+                            <th>删除</th>
+                        </tr>
+                    </thead>
+                    @if (Model.List != null)
+                    {
+                        foreach (Sundry m in Model.List)
+                        {
+                            <tr>
+                                <td class="check"><input type="checkbox" tabID="@m.ID" /></td>
+								<td>@m.ID</td>
+								<td>@m.str1</td>
+                                <td><a href='@m.str2.Split(',')[0]'><img src='@m.str2.Split(',')[0]' /></a></td>
+								<td>@m.str3</td>
+                                <td><a href="@Url.Action("Edit", new { id = m.ID, TID = Request.QueryString["TID"] })"><i class="glyphicon glyphicon-edit"></i></a></td>
+                                <td><a href="@Url.Action("Delete", new { id = m.ID })@Request.Url.Query" onclick="return confirm('确定删除？')"><i class="glyphicon glyphicon-remove"></i></a></td>
+                            </tr>
+                        }
+                        if(Model.List.Count == 0){ <tr><td colspan="100" style="color:red;text-align:center;font-size:16px;font-weight:bold;">无记录</td></tr> }
+                    }
+                </table>
+            </div>
+            <div class="box-foot">
+                @Html.Pager(new PagerModel(Model.DataCount, Model.PageSize, Model.PageIndex, @Url.Action("List", new { id = "" })) { CssClass = "pager", IndexClass = "curr", TopPageText = "<i class=\"glyphicon glyphicon-chevron-left\"></i>", BottomPageText = "<i class=\"glyphicon glyphicon-chevron-right\"></i>", Type = 2 })
+                <div class="pagerDesc">共有 @(Model.DataCount % Model.PageSize == 0 ? Model.DataCount / Model.PageSize : Model.DataCount / Model.PageSize + 1) 页，每页显示 @Model.PageSize 条，共有 @Model.DataCount 条</div>
+            </div>
+        </div>
+    </div>
+</div>

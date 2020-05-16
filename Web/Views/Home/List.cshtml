@@ -1,0 +1,36 @@
+﻿@{Layout = "~/Views/Shared/_Layout.cshtml";}
+@model List<Article>
+@section head{
+}
+<div class="width_c marL30 floL">
+    <ul class="c_list marT10">
+        @foreach (Article m in Model)
+        {
+        <li class="floLg">
+            @if (m.ImgUrl.Length>0)
+            {
+                <a href="/@m.ID" target="_blank" class="imgAuto"><img src="@m.ImgUrl" /></a>
+                <div class="marL20 c_list_right">
+                    <a href="/@m.ID" target="_blank" class="c_list_title">@m.Title</a>
+                    <p class="marT10 font13">@Base.Time(m.CreateDate)</p>
+                </div>
+            }
+            else
+            {
+                <div class="c_list_right" style="width:auto;">
+                    <a href="/@m.ID" target="_blank" class="c_list_title">@m.Title</a>
+                    <p class="marT10 font13">@Base.Time(m.CreateDate)</p>
+                </div>
+            }
+        </li>
+        }
+    </ul>
+    <div class="page floLg">
+        <a href="@ViewBag.topPage">上一页</a>
+        <a href="@ViewBag.bottomPage" class="marL30">下一页</a>
+    </div>
+</div>
+<div class="width_r marL30 floL">
+    <div class="search floLg marB15"><input type="text" id="txtSearch" /><a href="javascript:void(0)" id="btnSearch"></a></div>
+    @Html.Action("_PartialRight", "Home")
+</div>

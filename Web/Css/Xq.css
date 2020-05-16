@@ -1,0 +1,41 @@
+﻿a:hover{color:#406599;}
+.width {width:1170px;margin-left:auto;margin-right:auto;}
+.imgAuto{display:block;overflow:hidden;}
+.imgAuto img{min-width:100%;min-height:100%;position:relative;/*设置相对对位，js有用到*/}
+.top {height:34px;line-height:34px;font-size:14px;color:#fff;background-color:#333;}
+.top a:hover{color:inherit;}
+.nav a:hover{background-color:#4f4f4f;color:#fff;}
+.nav li a{padding:0px 15px;display:block;}
+.NavMore {position:relative;z-index:1;}
+.NavMore ol {position:absolute;left:0px;top:32px;background-color:#333333;display:none;}
+.head{box-shadow:0px 1px 4px #e0e0e0;padding:10px 0px;}
+.search{width:340px;border:1px solid #cfcfcf;border-radius:100px;overflow:hidden;padding-left:15px;background-color:#f8f8f8;}
+.search input{width:280px;height:34px;background-color:transparent;border:none;outline:none;}
+.search a{width:30px;height:32px;background:url(/Img/search.jpg) no-repeat center center;}
+.width_l{width:110px;top:10px;/*top与js有关*/}
+.width_c{width:660px;}
+.width_r{width:340px;}
+
+.fx a{height:34px;line-height:34px;padding-left:50px;background:url(/Img/fx.jpg) no-repeat;font-size:16px;display:block;}
+.fx .fx_pl{height:30px;line-height:30px;}
+.fx .fx_hr{height:1px;background-color:#e8e8e8;}
+.fx .fx_wb{background-position:0px -45px;}
+.fx .fx_qq{background-position:0px -92px;}
+.fx .fx_wx {position:relative;}
+.fx .fx_wx a{background-position:0px -142px;}
+.fx .fx_wx div {position:absolute;top:45px;left:0px;}
+
+.title{font-size:30px;font-weight:bold;}
+.date{font-size:13px;color:#888;line-height:56px;}
+.article{line-height:30px;font-size:16px;}
+.article img {max-width:100%;}
+
+.r_box{border-top:2px solid #ED4040;background-color:#F4F5F6;padding:15px 20px 10px 20px;}
+.r_box .r_title{color: #222;font-size: 18px;font-weight: 700;}
+.r_list1 li{border-bottom:1px solid #E8E8E8;padding-bottom:10px;margin-bottom:10px;}
+.r_list1 li:last-child{border-bottom:0;margin-bottom:0px;}
+.r_list1 .imgAuto{width:60px;height:60px;}
+.r_list1_t{width:220px;height:50px;line-height:24px;overflow:hidden;padding-top:5px;font-size:14px;margin-left:20px;}
+.r_list2 {width:110%;}
+.r_list2 li{width:145px;height:135px;overflow:hidden;margin-right:15px;margin-bottom:15px;font-size:14px;}
+.r_list2 .imgAuto{width:100%;height:90px;margin-bottom:5px;}

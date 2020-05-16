@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>反馈|投诉|联系我们|易风网</title>
+    <link rel="stylesheet" type="text/css" href="/Sys/Css.css" />
+    <style type="text/css">
+        .width {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        input, textarea {
+            outline: none;
+        }
+
+        .title {
+            height: 60px;
+            line-height: 58px;
+            border-bottom: 2px solid #ddd;
+            font-size: 24px;
+            color: #F44D4D;
+        }
+
+            .title p {
+                display: inline-block;
+                border-bottom: 2px solid #F44D4D;
+            }
+
+        .txt {
+            width: 910px;
+            padding: 10px 15px;
+            border: 1px solid #D7D7D7;
+            background-color: #F2F2F5;
+            border-radius: 4px;
+        }
+
+            .txt:focus {
+                border-color: red;
+                background-color: #f6f6f6;
+            }
+
+        .btn {
+            height: 36px;
+            line-height: 36px;
+            padding: 0px 30px;
+            background-color: #F44D4D;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: inherit;
+        }
+
+            .btn:hover {
+                background-color: #C52424;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div class="width" id="fankui">
+        <div class="title"><p>意见反馈</p></div>
+        <form action="/Other/feedback" method="post">
+            <ul class="marT30 marB20g">
+                <li>
+                    <label>联系方式</label>
+                    <input type="text" class="txt marL20" name="phone" />
+                </li>
+                <li>
+                    <label style="vertical-align:top;">您的意见</label>
+                    <textarea class="txt marL20" style="height:100px;" name="content"></textarea>
+                </li>
+            </ul>
+            <div class="textC"><input type="submit" class="btn" value="提交" /></div>
+        </form>
+    </div>
+    <div class="width marT20" id="tousu">
+        <div class="title"><p>侵权投诉</p></div>
+        <div class="marT30 linH30">
+            <p class="font18 textC"><b>一、 投诉流程</b></p>
+            <p>1、投诉通知</p>
+            <p>权利人认为易风网平台上的某些内容涉嫌侵犯其合法权益，可向易风网发出书面投诉通知。根据《信息网络传播权保护条例》及《最高人民法院关于审理利用信息网络侵害人身权益民事纠纷案件适用法律若干问题的规定》等规定，投诉通知须包含以下内容：</p>
+            <p>1.1 权利人主体信息和相关证明材料</p>
+            <p>
+                （1）个人投诉：  权利人的真实姓名、联系电话及邮箱、联系地址、身份证（中国公民）或护照（外国公民）的照片或扫描件等。<br>
+                （2）单位投诉：  权利人的名称、住所地、联系人、联系电话及邮箱、投诉通知（加盖公章）、营业执照（加盖公章）等。 <br>
+                （3）代他人投诉：  除上述（1）（2）中要求的投诉人和权利人双方的主体身份信息和证明材料外，还需提供权利人签名或盖章的委托书。
+            </p>
+            <p>1.2 投诉内容</p>
+            <p>
+                （1）被投诉内容的完整标题/名称和网络地址、所在位置描述等足以准确定位侵权内容的相关信息。 <br>
+                （2）被投诉内容侵犯的权利类型（如：信息网络传播权、著作权、名誉权、肖像权等）。
+            </p>
+            <p>1.3 构成侵权的初步证明材料</p>
+            <p>
+                （1）著作权侵权投诉  <br>
+                A.著作权权属证明材料：包括但不限于版权证书、商标权证书、专利权证书、作品首次公开发表或发行日期证明材料、创作手稿、经权威机构签发的作品创作时间戳、作品备案证书等。
+                <br>
+                B.  被投诉内容构成侵权的证明材料：包括但不限于被投诉内容构成对权利人版权、商标权或专利权等权利侵权的有效证明材料。
+                <br>
+                （2）人身权侵权投诉  <br>
+                A. 指明被投诉信息中具体哪些内容涉嫌侵犯权利人的人身权益。  <br>
+                B.被投诉内容对权利人人身权益构成侵权的事实和详细理由说明。
+            </p>
+            <p>1.4 权利人保证</p>
+            <p>
+                权利人应在通知书中保证：权利人在通知书中的陈述和所提供材料皆是真实、有效和合法的，保证承担和赔偿易风网因根据权利人通知书对被投诉内容进行处理而遭受的全部损失。
+            </p>
+            <p>2、对合法投诉通知的处理</p><p>
+                2.1 易风网收到权利人符合本指引要求的投诉通知后，会尽快依法对被投诉内容做删除或断开链接等处理。
+                <br>
+                2.2  对不符合本指引要求的投诉通知，易风网有权在权利人补正前暂不处理。
+                <br>
+                2.3 对于侵犯权利人信息网络传播权的投诉通知，易风网在进行处理投诉的同时可依法将投诉通知转送服务对象。若服务对象依法提交了反通知，易风网会将反通知转送权利人。若权利人对反通知持有异议，依据法律规定，权利人应当且能够通过行政或司法程序直接和服务对象处理相关争议。
+            </p>
+            <p class="font18 textC"><b>二、 注意事项</b></p>
+            <p>
+                1、权利人应提供经签章或签名的书面通知书及相关证明材料的扫描件。为确保权利人提供相关材料的真实性和有效性，易风网认为必要时，可要求您提供上述材料的原件，届时还请配合提供。  <br>
+                2、若权利人确有合理理由不能提供证明材料原件的，应提供其复印件（复印件上应有权利人签章或签名）。<br>
+                3、若证明材料是在外国或港澳台地区形成的，应按照法律规定在所在国家或地区进行公证认证或其他法律要求的证明程序。
+                <br>
+                4、 若权利人已经对被投诉人提起行政或司法争议解决程序的，请将通知书和相关受理证明、提交给争议解决机构的证据一并提交易风网，这将有利于对投诉的处理。
+            </p>
+        </div>
+    </div>
+    <div class="width marT20" style="height:600px;" id="lianxi">
+        <div class="title"><p>联系我们</p></div>
+        <div class="textC linH30 marT30">
+            <p>邮箱：727863984@qq.com</p>
+            <p>电话：13418980092</p>
+        </div>
+    </div>
+</body>
+</html>

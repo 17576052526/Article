@@ -1,0 +1,40 @@
+﻿@{Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";}
+@model Sundry
+@section head{
+    <script type="text/javascript" src="~/Areas/Admin/js/Edit.js"></script>
+}
+<div class="right" id="right">
+    <div class="rightTitle">
+        <h1>杂项表<small>@(Model != null ? "编辑" : "新增")</small></h1>
+        <ol>
+            <li><a href="/Admin"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+            <li><span>&gt;</span><a href="@Url.Action("List")@Request.Url.Query">杂项表</a></li>
+            <li><span>&gt;</span><small>@(Model != null ? "编辑" : "新增")</small></li>
+        </ol>
+    </div>
+    <div class="content">
+        <div class="box box-primary">
+            <form action="@Url.Action("Edit", new { TID = Request.QueryString["TID"] })" method="post">
+                <ul class="form-ul">
+                    <li>
+                        <label for="str1">标题</label>
+                        @Html.TextBoxFor(m => m.str1, new { @class = "input-text" })
+                    </li>
+                    <li class="img" num="1">
+                        <label>图片</label>
+                        <input type="button" value="上传图片" class="btn btn-success" />
+                        @Html.HiddenFor(m => m.str2)
+                    </li>
+                    <li>
+                        <label for="str3">链接</label>
+                        @Html.TextBoxFor(m => m.str3, new { @class = "input-text" })
+                    </li>
+                </ul>
+                <div class="box-foot">
+                    <input type="submit" value="提交" class="btn btn-primary" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@Url.Action("List")@Request.Url.Query" class="btn btn-default">返回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
